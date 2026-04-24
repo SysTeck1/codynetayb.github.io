@@ -72,9 +72,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      background: rgba(88, 166, 255, 0.1);
       overflow: hidden;
     }
     
@@ -96,14 +93,14 @@
       align-items: center;
       justify-content: center;
       z-index: 4000;
-      opacity: 0;
-      visibility: hidden;
+      opacity: 1;
+      visibility: visible;
       transition: opacity 0.5s ease, visibility 0.5s ease;
     }
     
-    .welcome-overlay.active {
-      opacity: 1;
-      visibility: visible;
+    .welcome-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
     }
     
     .welcome-content {
@@ -118,12 +115,9 @@
     }
     
     .welcome-logo img {
-      width: 120px;
-      height: 120px;
-      border-radius: 15px;
-      border: 3px solid var(--accent);
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1rem;
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
     }
     
     .welcome-content h1 {
@@ -1328,7 +1322,7 @@
   <div id="welcomeOverlay" class="welcome-overlay">
     <div class="welcome-content">
       <div class="welcome-logo">
-        <img src="img/logo/Portada.png" alt="CodyNet A&B Logo">
+        <img src="img/logo/Logo.png" alt="CodyNet A&B Logo">
       </div>
       <h1>Bienvenido a CodyNet A&B</h1>
       <p>Tu socio tecnológico para soluciones innovadoras</p>
@@ -1343,7 +1337,7 @@
       <nav>
         <div class="header-content">
           <div class="logo-area">
-            <img src="img/logo/Portada.png" alt="CodyNet A&B Logo">
+            <img src="img/logo/Logo.png" alt="CodyNet A&B Logo">
           </div>
           <div class="logo">CodyNet A&B</div>
         </div>
@@ -1878,97 +1872,15 @@
     // Welcome Overlay functionality
     const welcomeOverlay = document.getElementById("welcomeOverlay");
     const welcomeEnterBtn = document.getElementById("welcomeEnterBtn");
-    
-    // Show welcome overlay on page load
-    window.addEventListener("load", () => {
-      welcomeOverlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
-    
+
+    // Prevent scroll on body when welcome overlay is visible
+    document.body.style.overflow = "hidden";
+
     // Hide welcome overlay and show main content
     welcomeEnterBtn.addEventListener("click", () => {
-      welcomeOverlay.classList.remove("active");
+      welcomeOverlay.classList.add("hidden");
       document.body.style.overflow = "";
     });
-  // Welcome Overlay functionality
-const welcomeOverlay = document.getElementById("welcomeOverlay");
-const welcomeEnterBtn = document.getElementById("welcomeEnterBtn");
-
-// Show welcome overlay on page load
-window.addEventListener("load", () => {
-  welcomeOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-});
-
-// Hide welcome overlay and show main content
-welcomeEnterBtn.addEventListener("click", () => {
-  welcomeOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-});
-
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-    
-    // Welcome Overlay functionality
-    const welcomeOverlay = document.getElementById("welcomeOverlay");
-    const welcomeEnterBtn = document.getElementById("welcomeEnterBtn");
-    
-    // Show welcome overlay on page load
-    window.addEventListener("load", () => {
-      welcomeOverlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
-    
-    // Hide welcome overlay and show main content
-    welcomeEnterBtn.addEventListener("click", () => {
-      welcomeOverlay.classList.remove("active");
-      document.body.style.overflow = "";
-    });
-  // Welcome Overlay functionality
-const welcomeOverlay = document.getElementById("welcomeOverlay");
-const welcomeEnterBtn = document.getElementById("welcomeEnterBtn");
-
-// Show welcome overlay on page load
-window.addEventListener("load", () => {
-  welcomeOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-});
-
-// Hide welcome overlay and show main content
-welcomeEnterBtn.addEventListener("click", () => {
-  welcomeOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-});
-
-</script>
-    // Welcome Overlay functionality
-    const welcomeOverlay = document.getElementById('welcomeOverlay');
-    const welcomeEnterBtn = document.getElementById('welcomeEnterBtn');
-    
-    // Show welcome overlay on page load
-    window.addEventListener('load', () => {
-      welcomeOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-    
-    // Hide welcome overlay and show main content
-    welcomeEnterBtn.addEventListener('click', () => {
-      welcomeOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-
-
-
-
