@@ -155,6 +155,20 @@
       box-shadow: 0 8px 25px rgba(88, 166, 255, 0.4);
     }
     
+    .welcome-btn.loading {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+    
+    .welcome-btn.loading i {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
@@ -1546,7 +1560,7 @@
           <a href="https://wa.me/18094416683" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
           <a href="https://github.com/CodyNetAyB" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           <a href="https://www.workana.com/freelancer/CodyNet A&B" target="_blank"><i class="fas fa-briefcase"></i> Workana</a>
-          <a href="https://facebook.com/CodyNetAyB" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="https://www.facebook.com/share/1BV5Cmzsr4/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
           <a href="https://instagram.com/CodyNetAyB" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
           <a href="https://t.me/CodyNetAyB" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
         </div>
@@ -1899,10 +1913,22 @@
     // Prevent scroll on body when welcome overlay is visible
     document.body.style.overflow = "hidden";
 
-    // Hide welcome overlay and show main content
+    // Hide welcome overlay and show main content with loading
     welcomeEnterBtn.addEventListener("click", () => {
-      welcomeOverlay.classList.add("hidden");
-      document.body.style.overflow = "";
+      // Add loading state
+      welcomeEnterBtn.classList.add("loading");
+      const originalIcon = welcomeEnterBtn.querySelector("i");
+      const originalIconClass = originalIcon.className;
+      originalIcon.className = "fas fa-spinner fa-spin";
+      
+      // Wait 3 seconds then hide overlay
+      setTimeout(() => {
+        welcomeOverlay.classList.add("hidden");
+        document.body.style.overflow = "";
+        // Restore original icon
+        originalIcon.className = originalIconClass;
+        welcomeEnterBtn.classList.remove("loading");
+      }, 3000);
     });
     
 </script>
