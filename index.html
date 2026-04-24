@@ -1784,6 +1784,22 @@
         showImage(currentIndex + 1);
       }
     });
+    
+    // Welcome Overlay functionality
+    const welcomeOverlay = document.getElementById("welcomeOverlay");
+    const welcomeEnterBtn = document.getElementById("welcomeEnterBtn");
+    
+    // Show welcome overlay on page load
+    window.addEventListener("load", () => {
+      welcomeOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+    
+    // Hide welcome overlay and show main content
+    welcomeEnterBtn.addEventListener("click", () => {
+      welcomeOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
   </script>
 </body>
 </html>
@@ -1796,4 +1812,37 @@
 
 
 
+
+    
+    // Welcome Overlay functionality
+    const welcomeOverlay = document.getElementById("welcomeOverlay");
+    const welcomeEnterBtn = document.getElementById("welcomeEnterBtn");
+    
+    // Show welcome overlay on page load
+    window.addEventListener("load", () => {
+      welcomeOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+    
+    // Hide welcome overlay and show main content
+    welcomeEnterBtn.addEventListener("click", () => {
+      welcomeOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  </script>
+    // Welcome Overlay functionality
+    const welcomeOverlay = document.getElementById('welcomeOverlay');
+    const welcomeEnterBtn = document.getElementById('welcomeEnterBtn');
+    
+    // Show welcome overlay on page load
+    window.addEventListener('load', () => {
+      welcomeOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    // Hide welcome overlay and show main content
+    welcomeEnterBtn.addEventListener('click', () => {
+      welcomeOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
 
